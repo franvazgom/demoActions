@@ -1,0 +1,22 @@
+[MASTER]
+# Ignora carpetas comunes de entorno virtual
+ignore=venv,env,.venv,dist,build
+
+[MESSAGES CONTROL]
+# Desactivamos todo primero para tener control total
+disable=all
+# Activamos solo lo relacionado con documentación (Missing Docstrings)
+# C0114: Missing module docstring
+# C0115: Missing class docstring
+# C0116: Missing function or method docstring
+enable=C0114,C0115,C0116
+
+[REPORTS]
+# Muestra una puntuación del 1 al 10
+reports=yes
+# No mostrar estadísticas aburridas, solo el puntaje
+score=yes
+
+[BASIC]
+# Tamaño mínimo de los docstrings
+docstring-min-length=5
