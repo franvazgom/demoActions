@@ -23,5 +23,9 @@ jobs:
 
       - name: Analysing the code with pylint
         run: |
-          # Ejecutamos pylint y capturamos el resultado.           
-          pylint --fail-under=9.0 $(git ls-files '*.py')
+          FILES=$(git ls-files '*.py')
+          if [ -z "$FILES" ]; then
+            echo "No se encontraron archivos Python para analizar."
+            exit 0
+          fi
+          pylint --fail-under=9.0 $FILES
